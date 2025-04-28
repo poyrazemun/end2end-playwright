@@ -1,0 +1,27 @@
+{
+  "name": "bank-app-end-to-end-playwright",
+  "version": "1.0.0",
+  "description": "End to end testing of demo banking app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:config":"npx playwright test --config=e2e.config.ts",
+    "test:e2eLogin": "npx playwright test tests/e2e-login.spec.ts",
+    "test:e2eForm": "npx playwright test --config=e2e.config.ts tests/e2e-form.spec.ts",
+    "test:e2eFormH": "npx playwright test --headed tests/e2e-form.spec.ts",
+    "test:e2eSearch": "npx playwright test tests/e2e-search.spec.ts",
+    "test:e2eSearchH": "npx playwright test --headed tests/e2e-search.spec.ts",
+    "test:chromium": "npx playwright test --project=Chromium",
+    "test:firefox": "npx playwright test --project=Firefox",
+    "test:webkit": "npx playwright test --project=Webkit",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:report": "npx playwright show-report",
+    "test:ci": "npx playwright test --reporter=html"
+  },
+  "author": "Omer Fatih",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.52.0"
+  }
+}
