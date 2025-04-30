@@ -62,6 +62,6 @@ export class FeedbackPage extends AbstractPage {
   }
 
   async isFormSame() {
-    expect(await this.form.screenshot()).toMatchSnapshot("form.png");
+    await expect(await this.form.screenshot()).toMatchSnapshot("form.png");
   }
 }
