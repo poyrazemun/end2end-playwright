@@ -1,8 +1,8 @@
 import { Page, Locator } from "@playwright/test";
 import { fillAnyInputBox, clickAnyLocator, verifyElementVisible, verifyInputBoxIsEmpty } from "../helpers";
+import { AbstractPage } from "./AbstractPage";
 
-export class FeedbackPage {
-  private page: Page;
+export class FeedbackPage extends AbstractPage {
   private nameInput: Locator;
   private emailInput: Locator;
   private subjectInput: Locator;
@@ -12,7 +12,7 @@ export class FeedbackPage {
   private clearButton: Locator;
 
   constructor(page: Page) {
-    this.page = page;
+    super(page);
     this.nameInput = page.getByPlaceholder("Your Name");
     this.emailInput = page.getByPlaceholder("Your email address");
     this.subjectInput = page.getByPlaceholder("Subject");
@@ -39,7 +39,7 @@ export class FeedbackPage {
 
   async submitTheForm(userName: string, email: string, subject: string, comment: string) {
     await this.fillTheForm(userName, email, subject, comment);
-    await this.page.waitForTimeout(200);
+    await this.wait(200);
     await this.clickTheSubmitButton();
   }
 
@@ -48,7 +48,7 @@ export class FeedbackPage {
   }
 
   async clearTheForm() {
-    await this.page.waitForTimeout(200);
+    await this.wait(200);
     await this.clickTheClearButton();
   }
 
