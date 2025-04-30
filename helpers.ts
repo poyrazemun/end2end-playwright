@@ -16,3 +16,11 @@ export async function fillAnyInputBox(locator: Locator, input: string) {
 export async function verifyInputBoxIsEmpty(locator: Locator) {
   await expect(locator).toBeEmpty();
 }
+
+export async function clickAnyLocator(locator: Locator) {
+  await locator.click();
+}
+
+export async function verifyElementVisible(locator: Locator) {
+  await expect(locator).toBeVisible();
+}
