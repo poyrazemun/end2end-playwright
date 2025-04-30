@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import { FeedbackPage } from "../page-objects/FeedbackPage";
+import { FeedbackPage } from "../../page-objects/FeedbackPage";
 
 const mainUrl = "http://zero.webappsecurity.com/feedback.html";
 let feedbackPage: FeedbackPage;

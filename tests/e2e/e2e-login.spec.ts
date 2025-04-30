@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-import { generateStrongRandomPassword } from "../helpers";
+import { generateStrongRandomPassword } from "../../helpers";
 
 const mainUrl = "https://parabank.parasoft.com/";
 
@@ -53,9 +53,7 @@ test.describe("Login / Logout Flow", () => {
     await login(page, "", "");
 
     const errorElement = page.locator("p.error");
-    await expect(errorElement).toHaveText(
-      "Please enter a username and password."
-    );
+    await expect(errorElement).toHaveText("Please enter a username and password.");
   });
 
   test("Successful login", async ({ page }) => {
