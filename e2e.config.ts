@@ -1,6 +1,6 @@
-import { PlaywrightTestConfig } from "@playwright/test";
+import { defineConfig } from "@playwright/test";
 
-const config: PlaywrightTestConfig = {
+const config = defineConfig({
   timeout: 60000,
   retries: 0,
   //testDir: "tests/e2e", //su an icin gereksiz gorulebilir ama farkli config dosyalarinin farkli testleri calistirmasi bu sekilde saglaniyor. Yani bu dosyadaki
@@ -16,18 +16,18 @@ const config: PlaywrightTestConfig = {
   projects: [
     //her seferinde command line'a project ismini yazmak istemedigim icin burayi comment out yaptim. Simdi default ayar olan sadece bir browser'da run edilcek testler.
     {
-      name: "Chromium",
+      name: "chromium",
       use: { browserName: "chromium" },
     },
     {
-      name: "Firefox",
+      name: "firefox",
       use: { browserName: "firefox" },
     },
     {
-      name: "Webkit",
+      name: "webkit",
       use: { browserName: "webkit" },
     },
   ],
-};
+});
 
 export default config;
