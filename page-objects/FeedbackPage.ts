@@ -1,4 +1,4 @@
-import { Page, Locator } from "@playwright/test";
+import { Page, Locator, expect } from "@playwright/test";
 import { fillAnyInputBox, clickAnyLocator, verifyElementVisible, verifyInputBoxIsEmpty } from "../helpers";
 import { AbstractPage } from "./AbstractPage";
 
@@ -10,6 +10,7 @@ export class FeedbackPage extends AbstractPage {
   private submitButton: Locator;
   private feedbackTitle: Locator;
   private clearButton: Locator;
+  private form: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -20,6 +21,7 @@ export class FeedbackPage extends AbstractPage {
     this.submitButton = page.locator("//input[@name='submit']");
     this.feedbackTitle = page.locator("//h3[@id='feedback-title']");
     this.clearButton = page.locator("//input[@type='reset']");
+    this.form = page.locator("//form[@action='/sendFeedback.html']");
   }
 
   async fillTheForm(userName: string, email: string, subject: string, comment: string) {
@@ -57,5 +59,9 @@ export class FeedbackPage extends AbstractPage {
     await verifyInputBoxIsEmpty(this.emailInput);
     await verifyInputBoxIsEmpty(this.subjectInput);
     await verifyInputBoxIsEmpty(this.commentInput);
+  }
+
+  async isFormSame() {
+    expect(await this.form.screenshot()).toMatchSnapshot("form.png");
   }
 }

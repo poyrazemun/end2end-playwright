@@ -22,4 +22,8 @@ test.describe("Fill / Clear Form", () => {
 
     await feedbackPage.isFormCleared();
   });
+
+  test("Form Is Same", async ({ page }) => {
+    await feedbackPage.isFormSame();
+  });
 });
