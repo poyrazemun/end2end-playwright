@@ -13,6 +13,7 @@
     "test:e2eSearchH": "npx playwright test --headed tests/e2e/e2e-search.spec.ts",
     "test:chromium": "npx playwright test --project=chromium --config=e2e.config.ts",
     "test:chromiumReport": "npx playwright test --project=chromium --config=e2e.config.ts --reporter=html",
+    "test:chromiumReportFormHeaded": "npx playwright test  --headed --project=chromium --config=e2e.config.ts tests/e2e/e2e-form.spec.ts --reporter=html",
     "test:firefox": "npx playwright test --project=firefox",
     "test:webkit": "npx playwright test --project=webkit",
     "test:headed": "npx playwright test --headed",

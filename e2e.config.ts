@@ -7,14 +7,16 @@ const config = defineConfig({
   //testlere bu config dosyasindaki ayarlar uygulanacak.Simdilik benim testlerim zaten tests dosyasinda ve e2e dosyam yok
   use: {
     headless: true,
-    viewport: { width: 1280, height: 720 },
+    viewport: null,
+    launchOptions: {
+      args: ["--start-maximized"],
+    },
     actionTimeout: 10000,
     video: "off",
     screenshot: "off",
   },
   workers: 1,
   projects: [
-    //her seferinde command line'a project ismini yazmak istemedigim icin burayi comment out yaptim. Simdi default ayar olan sadece bir browser'da run edilcek testler.
     {
       name: "chromium",
       use: { browserName: "chromium" },

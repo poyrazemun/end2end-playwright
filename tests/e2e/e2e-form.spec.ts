@@ -25,5 +25,7 @@ test.describe("Fill / Clear Form", () => {
 
   test("Form Is Same", async ({ page }) => {
     await feedbackPage.isFormSame();
+    //bu test case mesela UI kismindaki form elementi zaman icinde degisti mi degismedi mi diye kontrol ediyor.
+    //cunku her seferinde ss alarak asil ss ile karsilastiriyor.
   });
 });
