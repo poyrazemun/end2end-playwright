@@ -19,7 +19,9 @@
     "test:headed": "npx playwright test --headed",
     "test:debug": "npx playwright test --debug",
     "test:report": "npx playwright show-report",
-    "test:ci": "npx playwright test --reporter=html"
+    "test:ci": "npx playwright test --reporter=html",
+    "test:api": "npx playwright test --config=api.config.ts --project=chromium",
+    "test:apiReport": "npx playwright test --config=api.config.ts --project=chromium --reporter=html"
   },
   "author": "Omer Fatih",
   "license": "ISC",
