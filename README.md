@@ -18,7 +18,7 @@ This repository demonstrates comprehensive end-to-end (E2E) testing for a demo b
 This project contains E2E tests for a demo banking app, designed to ensure robust user flows and application stability using Playwright's powerful automation capabilities.
 
 - **Tech Stack:** TypeScript, Playwright
-- **Author:** Omer Fatih
+- **Author:** poyrazemun
 
 ## Features
 
